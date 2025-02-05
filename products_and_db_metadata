@@ -1,3 +1,23 @@
+product example in Firebase Firestore:
+"Product Name": "Samsung Galaxy A15, Android Smartphone, Dual SIM Mobile Phone, 8GB RAM, 256GB Storage, Light Blue, 1 Year Warranty/Local Version",
+"Price": 8899,
+"Rating": "4.1 out of 5 stars",
+"Number of Reviews": "3,197",
+"Image URL": "https://m.media-amazon.com/images/I/51Cida8RecL.__AC_SX300_SY300_QL70_ML2_.jpg",
+"Selected Color": "Light Blue",
+"Brand Name": "SAMSUNG",
+"Operating System": "Android 13.0",
+"RAM Memory Installed": "8 GB",
+"CPU Model": "Snapdragon",
+"CPU Speed": "2.3 GHz",
+"Memory Storage Capacity": "256 GB",
+"Screen Size": "6.5 Inches",
+"Resolution": "1080 x 2340",
+"Refresh Rate": "90 Hz",
+"Model Name": "Galaxy-A15"
+
+
+
 Products Metadata
 
 Brand: Samsung
@@ -59,24 +79,6 @@ Screen Size: 6.55" - 6.67"
 CPU: Snapdragon
 OS: Android, ColorOS 14
 Refresh Rate: 4G, LTE
-
-product example:
-    "Product Name": "Samsung Galaxy A15, Android Smartphone, Dual SIM Mobile Phone, 8GB RAM, 256GB Storage, Light Blue, 1 Year Warranty/Local Version",
-    "Price": 8899,
-    "Rating": "4.1 out of 5 stars",
-    "Number of Reviews": "3,197",
-    "Image URL": "https://m.media-amazon.com/images/I/51Cida8RecL.__AC_SX300_SY300_QL70_ML2_.jpg",
-    "Selected Color": "Light Blue",
-    "Brand Name": "SAMSUNG",
-    "Operating System": "Android 13.0",
-    "RAM Memory Installed": "8 GB",
-    "CPU Model": "Snapdragon",
-    "CPU Speed": "2.3 GHz",
-    "Memory Storage Capacity": "256 GB",
-    "Screen Size": "6.5 Inches",
-    "Resolution": "1080 x 2340",
-    "Refresh Rate": "90 Hz",
-    "Model Name": "Galaxy-A15"
 
 
 Firebase Firestore code:
