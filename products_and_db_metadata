@@ -1,0 +1,109 @@
+Product Metadata
+
+Brand: Samsung
+Models: Galaxy A15, A55, A16, A05s, A06, A35, S24 FE, S24 Ultra, A25, A05, A54, A23, A34, Z Fold6, Z Fold5
+Price Range: 5399 - 84500
+RAM: 3GB - 12GB
+Storage: 32GB - 512GB
+Screen Size: 6.1" - 7.6"
+CPU: Snapdragon, A-Series
+OS: Android (Various versions)
+Refresh Rate: 60Hz - 144Hz
+
+Brand: Xiaomi
+Models: Redmi A3, 13, Note 13, Note 12, Note 11, Note 10C, 9A, Poco C75, Pad 6
+Price Range: 3999 - 9900
+RAM: 2GB - 12GB
+Storage: 32GB - 512GB
+Screen Size: 6.3" - 11"
+CPU: Snapdragon, MediaTek Helio
+OS: Android 10 - HyperOS
+Refresh Rate: 60Hz - 120Hz
+
+Brand: Nokia
+Models: 106, 110, G60, C21 Plus, G11 Plus
+Price Range: 750 - 7999
+RAM: 48MB - 6GB
+Storage: 128MB - 128GB
+Screen Size: 1.8" - 6.5"
+CPU: Snapdragon, A10
+OS: Android, S30+
+Refresh Rate: 60Hz - 120Hz
+
+Brand: HONOR
+Models: X6b, X7c, X9c, 200, X9b
+Price Range: 4900 - 32888
+RAM: 6GB - 12GB
+Storage: 128GB - 512GB
+Screen Size: 5.7" - 6.78"
+CPU: Snapdragon, Qualcomm
+OS: Android 13-14
+Refresh Rate: 120Hz
+
+Brand: Realme
+Models: 12, C65, 12 Pro, C21Y, 7i
+Price Range: 777,700
+RAM: 4GB - 12GB
+Storage: 64GB - 512GB
+Screen Size: 6.4" - 6.75"
+CPU: Snapdragon, Others
+OS: Android 10 - Realme UI 5.0
+Refresh Rate: 60Hz - 120Hz
+
+Brand: OPPO
+Models: Reno 12F, A3, A60, A3x
+Price Range: 7099 - 11000
+RAM: 4GB - 12GB
+Storage: 128GB - 256GB
+Screen Size: 6.55" - 6.67"
+CPU: Snapdragon
+OS: Android, ColorOS 14
+Refresh Rate: 4G, LTE
+
+
+Firebase Firestore code:
+
+docs = db.collection("cities").stream()
+for doc in docs:
+    print(f"{doc.id} => {doc.to_dict()}")
+
+cities_ref = db.collection("cities")
+query = cities_ref.order_by("name").limit_to_last(2)
+results = query.get()
+
+cities_ref = db.collection("cities")
+query = cities_ref.order_by("name", direction=firestore.Query.DESCENDING).limit(3)
+results = query.stream()
+
+cities_ref = db.collection("cities")
+ordered_city_ref = cities_ref.order_by("state").order_by(
+    "population", direction=firestore.Query.DESCENDING
+)
+
+cities_ref = db.collection("cities")
+query = (
+    cities_ref.where(filter=FieldFilter("population", ">", 2500000))
+    .order_by("population")
+    .limit(2)
+)
+results = query.stream()
+
+
+
+db = firestore.Client()
+query = db.collection("cities")
+.where("population", ">", 1000000)
+.where("density", "<", 10000)
+
+
+db.collection("employees")
+  .where("salary", ">", 100000)
+  .where("experience", ">", 0)
+  .order_by("salary")
+  .order_by("experience");
+
+
+results = db.collection("employees")
+          .where("salary", ">", 100000)
+          .order_by("salary")
+          .stream()
